@@ -1,61 +1,36 @@
 class Encuesta:
 
-    def __init__(self, titulo, listadepreguntas):
-        self.titulo = titulo #titulo de la encuesta#
-        self.listado = listado #lista de preguntas con sus respectivas respuestas#
+    def __init__(self):
+        pass
 
-    def imprimirencuesta(self):
-        print(self.listado)
-    
-class Preguntayrespuestas:
-    def __init__(self, pregunta, respuestas):
-      self.pregunta = pregunta
-      self.respuestas = respuestas
+    def nuevaencuesta(self, titulo, listado):
+        self.titulo = titulo
+        self.listado = listado #listado de preguntas con sus respuestas
 
-class Listado:
-    def  __init__ (self, listado):
-        self.listado = listado
+    def imprimirtitulo(self):
+        print(self.titulo)
 
-titulo = input("ingresa el titulo:\n")
+encuesta = Encuesta()
 
+encuesta.titulo = input("Ingresar titulo:\n")
 
-pregunta = input("Ingresa tu pregunta:")
-respuestas = []
-listado = []
-contador = 0
+ingresarPregunta = input("Desesa ingresar una pregunta?:")
 
-preguntayrespuestas = Preguntayrespuestas(pregunta, respuestas)
-
-
-for i in range(1, 5):
-    print("ingresa respuesta")
-    respuesta = input()
-    respuestas.append(respuesta)
-    contador = contador + 1
-
-else:
-    print("Alcanzaste el maximo de respuestas")
-    listado.append(preguntayrespuestas)
+while ingresarPregunta == "si":
+    pregunta = input("Ingrese pregunta:\n")
     continuar = "si"
-    while input("Desea continuar con otra pregunta?:") == continuar:
-        contador = 0
-        pregunta = input("ingresa otra pregunta:")
-        respuestas = []
-        for i in range(1, 5):
-            print("ingresa respuesta")
-            respuesta = input()
-            respuestas.append(respuesta)
-            contador = contador + 1
-        else:
-            listado.append(preguntayrespuestas)
+    indice = 0
 
-listado = Listado(listado)
+    while indice < 4 and continuar == "si":
+        respuesta = input("Ingrese respuesta:\n")
+        continuar = input("Desea ingresar otra respuesta:\n")
+        indice = indice + 1
+    ingresarPregunta = input("Desea agregar otra pregunta?\n")
+
+encuesta.imprimirtitulo()
 
 
 
-
-encuestanueva = Encuesta(titulo, listado)
-
-
-
-print(listado)
+if __name__ == "__main__":
+    print("ok")
+    pass
