@@ -1,3 +1,5 @@
+
+
 class Encuesta:
 
     def __init__(self):
